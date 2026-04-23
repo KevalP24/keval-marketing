@@ -110,8 +110,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/logos/KMLogoMain.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         {/* JSON-LD: LocalBusiness Schema */}
