@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Search, Star, X, Send, CheckCircle, AlertCircle } from "lucide-react";
@@ -51,7 +52,7 @@ const staggerContainer = {
   },
 };
 
-export default function ProductsPage() {
+function ProductsContent() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All Products");
   const [searchTerm, setSearchTerm] = useState<string>("");
   
@@ -76,14 +77,12 @@ export default function ProductsPage() {
     ? currentBrand.categories
     : generalCategories;
 
-  // ✅ Reset category if not in available categories
   useEffect(() => {
     if (!availableCategories.includes(selectedCategory)) {
       setSelectedCategory("All Products");
     }
   }, [availableCategories, selectedCategory]);
 
-  // Close modal on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -102,7 +101,6 @@ export default function ProductsPage() {
     };
   }, [isModalOpen]);
 
-  // Filter products
   const filteredProducts = (products as Product[]).filter((product) => {
     const matchesCategory =
       selectedCategory === "All Products" ||
@@ -148,17 +146,14 @@ export default function ProductsPage() {
     setSubmitError(null);
 
     try {
-      // EmailJS configuration - handle potential undefined values
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      // Check if all required environment variables are present
       if (!serviceId || !templateId || !publicKey) {
         throw new Error('EmailJS configuration is incomplete. Please check your environment variables.');
       }
 
-      // Template parameters for EmailJS
       const templateParams = {
         to_name: 'Keval Marketing Team',
         from_name: formData.name,
@@ -166,7 +161,6 @@ export default function ProductsPage() {
         from_phone: formData.phone,
         message: formData.message,
         reply_to: formData.email,
-        // Product specific information
         product_name: selectedProduct?.name || 'N/A',
         product_category: selectedProduct?.category || 'N/A',
         product_brand: selectedProduct?.brand || 'N/A',
@@ -183,7 +177,6 @@ export default function ProductsPage() {
         }),
       };
 
-      // Send email using EmailJS
       const result = await emailjs.send(
         serviceId,
         templateId,
@@ -209,7 +202,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Section - White Background */}
+      {/* Hero Section */}
       <section className="relative py-20 px-4 bg-white pt-24">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
@@ -229,11 +222,10 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Search and Filter - Gray Background */}
+      {/* Search and Filter */}
       <section className="py-8 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            {/* Search Bar with Fixed Width */}
             <div className="relative w-full lg:w-64 flex-shrink-0">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input
@@ -245,7 +237,6 @@ export default function ProductsPage() {
               />
             </div>
 
-            {/* Category Buttons */}
             <div className="flex flex-wrap gap-2 w-full">
               {availableCategories.map((category) => (
                 <Button
@@ -269,7 +260,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Products Grid - White Background */}
+      {/* Products Grid */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -285,7 +276,7 @@ export default function ProductsPage() {
                     <div className="relative overflow-hidden rounded-t-lg">
                       <Image
                         src={product.image || "/placeholder.svg"}
-                        alt={product.name}
+                        alt={`${product.name} - ${product.category} by ${product.brand}`}
                         width={400}
                         height={192}
                         className="w-full h-48 object-contain group-hover:scale-105 transition-transform duration-300 bg-white"
@@ -343,7 +334,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Call to Action - Gray Background */}
+      {/* Call to Action */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -389,7 +380,6 @@ export default function ProductsPage() {
             exit={{ opacity: 0, scale: 0.95 }}
             className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
           >
-            {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b">
               <div>
                 <h3 className="text-xl font-semibold text-teal-800">Product Inquiry</h3>
@@ -405,7 +395,6 @@ export default function ProductsPage() {
               </Button>
             </div>
 
-            {/* Product Info */}
             {selectedProduct && (
               <div className="p-6 border-b bg-gray-50">
                 <div className="flex items-start space-x-3">
@@ -439,7 +428,6 @@ export default function ProductsPage() {
               </div>
             )}
 
-            {/* Modal Content */}
             <div className="p-6">
               {isSubmitted ? (
                 <motion.div
@@ -452,7 +440,7 @@ export default function ProductsPage() {
                     Inquiry Sent Successfully!
                   </h4>
                   <p className="text-sm text-gray-600">
-                    Thank you for your interest. We'll get back to you within 24 hours with product details and pricing.
+                    Thank you for your interest. We&apos;ll get back to you within 24 hours with product details and pricing.
                   </p>
                 </motion.div>
               ) : submitError ? (
@@ -561,5 +549,17 @@ export default function ProductsPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+      </div>
+    }>
+      <ProductsContent />
+    </Suspense>
   );
 }
