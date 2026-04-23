@@ -193,7 +193,7 @@ export default function ContactClient() {
                     <h3 className="text-xl font-semibold text-teal-800 mb-3">
                       {info.title}
                     </h3>
-                    <p className="text-gray-600 whitespace-pre-line">
+                    <p className="text-gray-600 whitespace-pre-line text-center">
                       {info.details}
                     </p>
                   </CardContent>
