@@ -6,7 +6,7 @@ const SITE_URL = "https://kevalmarketing.com"
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Keval Marketing — Vadodara's trusted electrical products dealer since 2017. Located at Sitaram Complex, Subhanpura. Serving electricians, contractors, and homeowners across Vadodara.",
+    "Learn about Keval Marketing — Vadodara's trusted electrical products dealer. Located at Sitaram Complex, Subhanpura. Serving electricians, contractors, and homeowners across Vadodara.",
   keywords: [
     "about Keval Marketing",
     "electrical shop history Vadodara",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/about`,
   },
   openGraph: {
-    title: "About Keval Marketing | Electrical Solutions Since 2017",
+    title: "About Keval Marketing | Trusted Electrical Solutions in Vadodara",
     description:
-      "Keval Marketing has been serving Vadodara with premium electrical products since 2017. Located at Sitaram Complex, Subhanpura. Trusted by electricians, contractors, and homeowners.",
+      "Keval Marketing has been serving Vadodara with premium electrical products. Located at Sitaram Complex, Subhanpura. Trusted by electricians, contractors, and homeowners.",
     url: `${SITE_URL}/about`,
     images: [
       {
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "About Keval Marketing | Electrical Solutions Since 2017",
+    title: "About Keval Marketing | Trusted Electrical Solutions in Vadodara",
     description:
-      "Keval Marketing has been serving Vadodara with premium electrical products since 2017. Located at Sitaram Complex, Subhanpura.",
+      "Keval Marketing has been serving Vadodara with premium electrical products. Located at Sitaram Complex, Subhanpura.",
   },
 }
 

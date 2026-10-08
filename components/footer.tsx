@@ -17,7 +17,7 @@ export default function Footer() {
               <span className="text-xl font-bold">Keval Marketing</span>
             </div>
             <p className="text-gray-300 mb-4">
-              Your trusted electrical solutions partner since 2017. Quality
+              Your trusted electrical solutions partner in Vadodara. Quality
               products, expert service.
             </p>
             <p className="text-sm text-gray-400">
@@ -89,10 +89,10 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-teal-300 flex-shrink-0 block" />
                 <a
-                  href="mailto:kevalmarketing2017@gmail.com"
+                  href="mailto:support@kevalmarketing.in"
                   className="text-gray-300 hover:text-teal-300 transition-colors"
                 >
-                  kevalmarketing2017@gmail.com
+                  support@kevalmarketing.in
                 </a>
               </div>
               <div className="flex items-start space-x-3">

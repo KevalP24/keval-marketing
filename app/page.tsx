@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Users, Package, Calendar, Zap, Award } from "lucide-react";
+import { ArrowRight, Users, Package, Zap, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/navbar";
@@ -160,7 +160,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Your Trusted Electrical Solutions Partner Since 2017
+              Your Trusted Electrical Solutions Partner in Vadodara
             </motion.p>
           </motion.div>
 
@@ -205,8 +205,8 @@ export default function HomePage() {
               About Keval Marketing
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-              Established in 2017, Keval Marketing has been serving Vadodara
-              with premium electrical products and exceptional customer service.
+              Keval Marketing proudly serves Vadodara with premium electrical
+              products and exceptional customer service.
               We are your one-stop destination for all electrical needs, from
               basic wiring to advanced lighting solutions.
             </p>
@@ -314,9 +314,8 @@ export default function HomePage() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-6"
+            className="grid grid-cols-2 gap-6 max-w-3xl mx-auto"
           >
-            <Counter end={7} label="Years in Service" icon={Calendar} />
             {/* <Counter end={5000} label="Happy Customers" icon={Users} /> */}
             <Counter end={2500} label="Products Sold" icon={Package} />
             <Counter end={20} label="Brand Partners" icon={Award} />

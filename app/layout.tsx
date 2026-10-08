@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const SITE_URL = "https://kevalmarketing.com"
 const SITE_NAME = "Keval Marketing"
 const SITE_DESCRIPTION =
-  "Keval Marketing — Vadodara's trusted electrical solutions partner since 2017. Premium wires, cables, switches, lighting, fans and more from RR Kabel, LAPP, Schneider, Trinity Touch, Dowell's, Mean Well, Jigo & Almonard."
+  "Keval Marketing — Vadodara's trusted electrical solutions partner. Premium wires, cables, switches, lighting, fans and more from RR Kabel, LAPP, Schneider, Trinity Touch, Dowell's, Mean Well, Jigo & Almonard."
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -126,8 +126,7 @@ export default function RootLayout({
               description: SITE_DESCRIPTION,
               url: SITE_URL,
               telephone: "+91-7096038481",
-              email: "kevalmarketing2017@gmail.com",
-              foundingDate: "2017",
+              email: "support@kevalmarketing.in",
               priceRange: "$$",
               image: `${SITE_URL}/og-image.jpg`,
               logo: `${SITE_URL}/logos/KMLogoMain.png`,

@@ -45,7 +45,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: "kevalmarketing2017@gmail.com",
+    details: "support@kevalmarketing.in",
     color: "text-blue-600",
   },
   {
@@ -398,7 +398,7 @@ export default function ContactClient() {
                 size="lg"
                 className="bg-teal-600 hover:bg-teal-700 text-white"
               >
-                <a href="mailto:kevalmarketing2017@gmail.com">
+                <a href="mailto:support@kevalmarketing.in">
                   <Mail className="mr-2 w-5 h-5" />
                   Email Us
                 </a>

@@ -64,7 +64,7 @@ export default function AboutClient() {
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-teal-800">About Keval Marketing</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your trusted partner in electrical solutions, serving Vadodara with dedication and excellence since 2017.
+              Your trusted partner in electrical solutions, serving Vadodara with dedication and excellence.
             </p>
           </motion.div>
         </div>
@@ -82,9 +82,9 @@ export default function AboutClient() {
             >
               <h2 className="text-4xl font-bold text-teal-800 mb-6">Our Story</h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Founded in 2017, Keval Marketing began as a small electrical shop with a big vision - to provide quality
-                electrical products and exceptional service to the people of Vadodara. What started as a humble
-                beginning has grown into one of the most trusted names in the electrical retail industry.
+                Keval Marketing was built on a simple vision - to provide quality electrical products and exceptional
+                service to the people of Vadodara. Driven by that commitment, we have become one of the most trusted
+                names in the local electrical retail industry.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Located in the heart of Subhanpura, our shop at Sitaram Complex has become a go-to destination for
@@ -111,7 +111,7 @@ export default function AboutClient() {
               />
               <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white p-4 rounded-lg shadow-lg">
                 <Clock className="w-6 h-6 mb-2" />
-                <p className="font-semibold">7+ Years</p>
+                <p className="font-semibold">Trusted Locally</p>
                 <p className="text-sm">Serving Vadodara</p>
               </div>
             </motion.div>

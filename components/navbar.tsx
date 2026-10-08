@@ -130,7 +130,7 @@ export default function Navbar() {
                 size="sm"
                 className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2"
               >
-                <a href="mailto:kevalmarketing2017@gmail.com">Inquire</a>
+                <a href="mailto:support@kevalmarketing.in">Inquire</a>
               </Button>
               <Button
                 asChild
@@ -200,7 +200,7 @@ export default function Navbar() {
                   asChild
                   className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3"
                 >
-                  <a href="mailto:kevalmarketing2017@gmail.com" className="flex items-center justify-center">
+                  <a href="mailto:support@kevalmarketing.in" className="flex items-center justify-center">
                     Inquire
                   </a>
                 </Button>

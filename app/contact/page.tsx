@@ -6,7 +6,7 @@ const SITE_URL = "https://kevalmarketing.com"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Keval Marketing for all your electrical needs. Visit us at 7, Sitaram Complex, Near Gorwa Workshop, New IPCL Road, Subhanpura, Vadodara. Call +91-7096038481 or email kevalmarketing2017@gmail.com.",
+    "Contact Keval Marketing for all your electrical needs. Visit us at 7, Sitaram Complex, Near Gorwa Workshop, New IPCL Road, Subhanpura, Vadodara. Call +91-7096038481 or email support@kevalmarketing.in.",
   keywords: [
     "contact Keval Marketing",
     "electrical shop Subhanpura Vadodara",
